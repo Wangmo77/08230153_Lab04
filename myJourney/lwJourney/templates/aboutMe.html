@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <style>
+        /* ---------- Overall Page Style ---------- */
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            color: #2c3e50;
+        }
+
+        /* ---------- Container ---------- */
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* ---------- Header ---------- */
+        h1 {
+            text-align: center;
+            color: #1a5276;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2e86c1;
+            border-left: 5px solid #2e86c1;
+            padding-left: 10px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* ---------- Profile Image (Main Focus) ---------- */
+        .profile-photo {
+            width: 180px;             /* larger size */
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            margin: 30px auto 20px auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.07);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+        }
+
+        /* ---------- Info Card ---------- */
+        .info-card {
+            background: #f7fbff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ---------- Text Styling ---------- */
+        p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            margin: 8px 0;
+        }
+
+        strong {
+            color: #1f618d;
+        }
+
+        /* ---------- Link/Button ---------- */
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            background: #2980b9;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background: #1f5d89;
+            transform: translateY(-2px);
+        }
+
+        /* ---------- Image Styling ---------- */
+        .screenshot {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    {% load static %}
+    <div class="container">
+        <h1>👩‍🎓 About {{ student.name }}</h1>
+
+        <!-- 🖼 Centered Large Profile Photo -->
+        <img src="{% static 'images/Leki.jpg' %}" alt="Profile Photo" class="profile-photo">
+
+        <!-- Student Information -->
+        <div class="info-card">
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Student ID:</strong> {{ student.studentID }}</p>
+            <p><strong>Age:</strong> {{ student.age }}</p>
+            <p><strong>Education:</strong> {{ student.education }}</p>
+        </div>
+
+        <h2>🌸 Hobbies and Interests</h2>
+        <p>{{ student.hobbies }}</p>
+
+        <h2>🎯 Future Goals</h2>
+        <p>{{ student.future_goals }}</p>
+
+        <h2>Screenshots from Admin Panel</h2>
+        <img src="{% static 'images/Capture1.JPG' %}" alt="Admin Panel Screenshot" class="screenshot">
+
+        <div style="text-align:center;">
+            <a href="{% url 'index' %}">🏠 Back to Learning Journey</a>
+        </div>
+
+        <footer>
+            <p>© 2025 My Learning Journey | Designed by Leki Wangmo</p>
+        </footer>
+    </div>
+
+</body>
+</html>
