@@ -9,17 +9,20 @@
         body {
             font-family: "Poppins", Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            /* modern soft-blue diagonal gradient */
+            background: linear-gradient(135deg, #f3fbff 0%, #eaf4fb 50%, #ffffff 100%);
             color: #2c3e50;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ---------- Container ---------- */
         .container {
             max-width: 900px;
             margin: 40px auto;
-            background: #ffffff;
+            /* slight translucency so the background gradient peeks through */
+            background: rgba(255,255,255,0.95);
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(17,24,39,0.08);
             padding: 30px 40px;
         }
 

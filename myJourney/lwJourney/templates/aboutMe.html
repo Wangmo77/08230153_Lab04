@@ -8,17 +8,20 @@
         body {
             font-family: "Poppins", Arial, sans-serif;
             margin: 0;
-            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            /* modern soft-blue diagonal gradient */
+            background: linear-gradient(135deg, #661a1e 0%, #074980 50%, #105c29 100%);
             color: #2c3e50;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ---------- Container ---------- */
         .container {
             max-width: 700px;
             margin: 50px auto;
-            background: #ffffff;
+            /* slight translucency so the background gradient peeks through */
+            background: rgba(255,255,255,0.95);
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(17,24,39,0.08);
             padding: 40px;
             text-align: center;
         }
@@ -41,9 +44,9 @@
 
         /* ---------- Profile Image (Main Focus) ---------- */
         .profile-photo {
-            width: 180px;             /* larger size */
-            height: 180px;
-            border-radius: 50%;
+            width: 220px;             /* slightly larger */
+            height: 220px;
+            border-radius: 12px; /* square with slightly rounded corners */
             object-fit: cover;
             border: 5px solid #ffffff;
             margin: 30px auto 20px auto;
@@ -131,7 +134,7 @@
 
     {% load static %}
     <div class="container">
-        <h1>👩‍🎓 About {{ student.name }}</h1>
+    <!-- heading intentionally removed per request -->
 
         <!-- 🖼 Centered Large Profile Photo -->
         <img src="{% static 'images/Leki.jpg' %}" alt="Profile Photo" class="profile-photo">
